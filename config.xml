@@ -15,7 +15,6 @@
 	<content src="index.html" />
 	<access origin="*" />
 	<icon src="resources/icon.png" /><!--Adaptar a resoluciones?-->
-	<preference name="orientation" value="portrait" />
 	<preference name="fullscreen" value="true" />
 	<preference name="SplashScreenDelay" value="10000" />
 	<preference name="AutoHideSplashScreen" value="false" />
