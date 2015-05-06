@@ -59,12 +59,12 @@ function getHermandades(){
 			hermandades.bbox = getEnvelope(data.features);
 					
 			$("#dropHermandades").empty();
-			$("#dropHermandades").append('<option value=0>----- Todas ------</option>');
 			$.each(data.features, function (index, value) {
 				$("#dropHermandades").append('<option value="'+value.properties.id+'">'+value.properties.name+'</option>');		    
 			});
 			$("#dropHermandades>option").tsort({charOrder:'a[á]c{ch}e[é]i[í]l{ll}nño[ó]u[ú]y[ý]'});
-			$("#dropHermandades").selectmenu().selectmenu("refresh");
+			$("#dropHermandades").prepend("<option value=0>Todas</option>");
+			$("#dropHermandades").val(0).selectmenu().selectmenu("refresh");
 			
 			zoomToAll();
 		})
