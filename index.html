@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	    <meta name="format-detection" content="telephone=no" />
+	    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, 
+	    							   minimum-scale=1" />
+	    
+	    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  		<link rel="stylesheet" href="css/app.css?v=1" />
+	    <title>Plan Romero 2015</title>
+	</head>
+	<body>
+				
+		<!-- Página mapa -->
+		<div data-role="page" id="mapa">
+			<div data-role="header">
+				<select name="dropHermandades" id="dropHermandades" data-inline="true"></select>
+    			<a href="javascript:getHermandades();" class="ui-btn ui-btn-b ui-btn-right ui-corner-all ui-icon-refresh ui-btn-icon-left">Actualizar</a>
+			</div>
+			<div data-role="content" id="contentMapa">
+				<iframe id="mapea" src=""> </iframe>
+			</div>
+		</div>
+	</body>
+	
+	
+    <script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<!--<script src="cordova.js"></script>-->
+	<script src="js/jquery.tinysort.min.js"></script>
+	<script src="js/jquery.tinysort.charorder.min.js"></script>
+	<script type="text/javascript" src="js/proj4.js"></script>
+	<script type="text/javascript" src="js/config.js?v=1"></script>
+	<script src="js/app.js?v=1"></script>	
+</html>
