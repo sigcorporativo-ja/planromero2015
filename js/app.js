@@ -114,7 +114,7 @@ function setHermandad(hermandad){
 }
 
 function setIframeSrc(url){
-	console.log(url);
+	startLoad();
 	$("#mapea").attr("src",url);
 }
 function startLoad(){
