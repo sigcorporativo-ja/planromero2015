@@ -47,6 +47,7 @@ function getEnvelope(features){
 }
 
 
+var idSel=0;
 function getHermandades(){
 	startLoad();
 	$.getJSON(urlService,{
@@ -57,16 +58,15 @@ function getHermandades(){
 		.done(function (data){
 			hermandades = data;
 			hermandades.bbox = getEnvelope(data.features);
-					
+			
 			$("#dropHermandades").empty();
 			$.each(data.features, function (index, value) {
 				$("#dropHermandades").append('<option value="'+value.properties.id+'">'+value.properties.name+'</option>');		    
 			});
 			$("#dropHermandades>option").tsort({charOrder:'a[á]c{ch}e[é]i[í]l{ll}nño[ó]u[ú]y[ý]'});
 			$("#dropHermandades").prepend("<option value=0>Todas</option>");
-			$("#dropHermandades").val(0).selectmenu().selectmenu("refresh");
-			
-			zoomToAll();
+			$("#dropHermandades").val(idSel).selectmenu().selectmenu("refresh").change();
+						
 		})
 		.fail(function (jqXHR, textStatus){
 			console.log(textStatus);
@@ -79,6 +79,10 @@ function getHermandades(){
 function asociarEventos(){
 	
 	$(window).on('resize orientationchange', function(){ ScaleContentToDevice(); });
+	$('#mapea').on('load', function(){
+		stopLoad();
+	});
+
 	$('#dropHermandades').change(function(e){
 
 		idSel= $(this).val();
@@ -93,12 +97,7 @@ function asociarEventos(){
 			});
 		}
 	});
-	
-	$('#mapea').on('load', function(){
-		stopLoad();
-	});
 }
-
 function zoomToAll(){
 	xy1proj=proj4(prj25830,[hermandades.bbox[0],hermandades.bbox[1]]);
 	xy2proj=proj4(prj25830,[hermandades.bbox[2],hermandades.bbox[3]]);
