@@ -1,4 +1,5 @@
 html, body, iframe, #contentMapa { margin:0; padding:0;}
 iframe { display:block; width:100%; height:100%; border:none; }
+#dropHermandades-button{min-width: 125px}
 .ui-header .ui-select {margin-left: 0.5em}
 .ui-header .ui-btn-right {margin-top: 0.5em}
