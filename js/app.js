@@ -12,7 +12,7 @@ $( document ).ready(function() {
 	
 	asociarEventos();
 
-
+	//Preparado para almacenar selección
 	var idHermandadStored = localStorage.getItem('idHermandad'); 
 	if(idHermandadStored===null){ 
 		//no hay datos almacenados
@@ -21,6 +21,7 @@ $( document ).ready(function() {
 					
 	}
 
+	StatusBar.hide();
 	navigator.splashscreen.hide();
 });
 
