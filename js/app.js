@@ -44,7 +44,7 @@ function getEnvelope(features){
 	    }
 	});	
 	
-	return [xmin,ymin,xmax,ymax];	
+	return [xmin*1.1,ymin*1.1,xmax*1.1,ymax*1.1];	
 }
 
 
@@ -88,7 +88,18 @@ function asociarEventos(){
 
 		idSel= $(this).val();
 		
-		getHermandades();
+		$.getJSON(urlService,{
+			format: "geojson",
+			auth: claveAuth,
+			emp: idEmp
+		})
+		.done(function (data){
+			hermandades = data;
+			hermandades.bbox = getEnvelope(data.features);
+		})
+		.fail(function (jqXHR, textStatus){
+			console.log(textStatus);
+		});
 		
 		if (idSel==0){
 			zoomToAll();
