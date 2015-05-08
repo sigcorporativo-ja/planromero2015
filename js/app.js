@@ -44,7 +44,7 @@ function getEnvelope(features){
 	    }
 	});	
 	
-	return [xmin*1.1,ymin*1.1,xmax*1.1,ymax*1.1];	
+	return [xmin,ymin,xmax,ymax];	
 }
 
 
