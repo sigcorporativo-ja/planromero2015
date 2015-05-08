@@ -87,6 +87,9 @@ function asociarEventos(){
 	$('#dropHermandades').change(function(e){
 
 		idSel= $(this).val();
+		
+		getHermandades();
+		
 		if (idSel==0){
 			zoomToAll();
 		}else{
