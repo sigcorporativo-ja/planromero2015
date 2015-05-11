@@ -124,7 +124,7 @@ function setHermandad(hermandad){
 	posProj = proj4(prj25830,hermandad.geometry.coordinates);
 	setIframeSrc(urlMapeaBase + "&layers=KML*"+hermandad.properties.name + "*"
 					+ encodeURIComponent(urlService + "?emp=" + idEmp + "&auth=" + claveAuth 
-					+ "&format=kml&id=" + hermandad.properties.id) + "*true&zoom=13&center=" + posProj);
+					+ "&format=kml&id=" + hermandad.properties.id) + "*true&zoom=12&center=" + posProj);
 }
 
 function setIframeSrc(url){
